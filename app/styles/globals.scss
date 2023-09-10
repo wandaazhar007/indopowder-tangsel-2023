@@ -28,6 +28,14 @@ Description: A passionate web developer based in Michigan, USA, with expertise i
 
 
 /* === GLOBALS CSS === */
+
+html {
+  font-size: 62.5%;
+  // overflow-x: hidden;
+  // scroll-behavior: smooth;
+  // scroll-padding-top: 7rem;
+}
+
 .wrapContainer {
   width: 90%;
   max-width: 133.4rem;
