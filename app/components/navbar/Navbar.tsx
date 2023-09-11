@@ -1,10 +1,23 @@
+'use client'
 import Image from 'next/image';
 import './navbar.scss';
 import Link from 'next/link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faComment, faCartArrowDown, faCartShopping, faGear, faHandshake, faMoneyBill, faPhoneSlash, faSmile, faSquareArrowUpRight, faSignIn } from "@fortawesome/free-solid-svg-icons";
+import { faComment, faCartArrowDown, faCartShopping, faGear, faHandshake, faMoneyBill, faPhoneSlash, faSmile, faSquareArrowUpRight, faSignIn, faBars } from "@fortawesome/free-solid-svg-icons";
+import { useState } from 'react';
+import { usePathname } from "next/navigation";
 
 const Navbar: React.FC = () => {
+  const pathName = usePathname();
+  const [active, setActive] = useState(false);
+  const handleNavbar = () => {
+    setActive(!active);
+  }
+
+  const handleClickMenu = () => {
+    setActive(false)
+  }
+
   return (
     <header className="header">
       <div className="wrapContainer">
@@ -13,16 +26,23 @@ const Navbar: React.FC = () => {
             <div className="logo">
               <Image src="/assets/images/logo-indopodwer-tangsel.png" width={100} height={100} alt="Indopowder Tangsel Logo" />
             </div>
+            <div className="title"><h2>Indopowder Tangsel</h2></div>
           </div>
-          <div className="colMid">
+
+          <div className="colMid ">
             <nav>
-              <ul>
-                <li><Link href="/">Home</Link></li>
-                <li><Link href="/">About</Link></li>
+              <ul className=''>
+                <li><Link href="/" className={pathName === '/' ? 'on' : ''}>Home</Link></li>
+                <li><Link href="/tentang" className={pathName === '/tentang' ? 'on' : ''}>Tentang</Link></li>
+                <li><Link href="/produk">Produk</Link></li>
+                <li><Link href="/ulasan">Ulasan</Link></li>
+                <li><Link href="/faq">Faq</Link></li>
+                <li><Link href="/kontak">Kontak</Link></li>
               </ul>
             </nav>
           </div>
-          <div className="colRight">
+
+          <div className="colRight ">
             <ul>
               <li>
                 <Link href="/cart">
@@ -35,6 +55,10 @@ const Navbar: React.FC = () => {
                 </Link>
               </li>
             </ul>
+          </div>
+
+          <div className="btnMenu">
+            <FontAwesomeIcon icon={faBars} className="iconMenu" />
           </div>
         </div>
       </div>

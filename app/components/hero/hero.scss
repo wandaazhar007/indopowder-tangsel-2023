@@ -1,0 +1,131 @@
+@import '../../styles/responsive.scss';
+@import '../../styles/variable.scss';
+
+.hero {
+  background-color: $bgColorPrimary;
+  height: 91vh;
+  padding-top: 5rem;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+
+  .wrapContainer {
+    .boxPrimary {
+      margin: 0 auto;
+      // margin-top: 10rem;
+      width: 100%;
+      height: 50rem;
+      // background-color: white;
+      background: linear-gradient(90deg, rgba(19, 144, 176, 1) 0%, rgba(29, 253, 194, 1) 83%, rgba(69, 251, 252, 1) 100%);
+      border-radius: 2rem;
+      box-shadow: $boxShadowPrimary;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+
+      .colLeft {
+        // border: .1rem solid salmon;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        padding: 2rem;
+        // color: #6a6969;
+        color: #fff;
+
+        h1 {
+          font-size: 3.8rem;
+          line-height: 4rem;
+        }
+
+        h3 {
+          font-size: 1.6rem;
+          font-weight: 400;
+        }
+
+        .rating {
+          display: flex;
+          font-size: 1.4rem;
+
+          p {
+            margin-left: .5rem;
+          }
+        }
+
+        .btnCta {
+          font-size: 1.6rem;
+          padding: 1rem 2rem;
+          border-radius: 1rem;
+          border: none;
+          background-color: $bgColorPrimary;
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          max-width: 20rem;
+        }
+      }
+
+      .colRight {
+        // border: .1rem solid salmon;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        padding: 2rem;
+
+        .boxRight {
+          border: .1rem solid salmon;
+          border-radius: 1rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        .boxRight.boxRight1 {
+          grid-column: span 3;
+
+
+        }
+
+        .boxRight.boxRight2 {
+          grid-row: span 2;
+
+          .animationBoba1 {
+            width: 25rem;
+          }
+        }
+
+        .boxRight.boxRight3 {
+          grid-column: span 2;
+          background-color: wheat;
+
+          .animationBoba2 {
+            width: 5rem;
+            border: .1rem solid salmon;
+          }
+        }
+      }
+    }
+
+    .boxSecondary {
+      margin-top: 4rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+
+      .box {
+        height: 10rem;
+        background-color: white;
+        border-radius: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: $boxShadowPrimary;
+      }
+
+      .box.box1 {
+        grid-column: span 2;
+        grid-row: span 2;
+        height: 100%;
+      }
+    }
+  }
+}
