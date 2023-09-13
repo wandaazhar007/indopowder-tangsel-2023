@@ -22,6 +22,11 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
 
+      @include tablet {
+        grid-template-columns: repeat(1, 1fr);
+        height: 120rem;
+      }
+
       .colLeft {
         // border: .1rem solid salmon;
         display: flex;
@@ -82,11 +87,18 @@
         .boxRight.boxRight1 {
           grid-column: span 3;
 
+          @include tablet {
+            grid-column: span 3;
+          }
 
         }
 
         .boxRight.boxRight2 {
           grid-row: span 2;
+
+          @include tablet {
+            grid-column: span 3;
+          }
 
           .animationBoba1 {
             width: 25rem;
@@ -95,11 +107,15 @@
 
         .boxRight.boxRight3 {
           grid-column: span 2;
-          background-color: wheat;
+          // background-color: wheat;
+
+          @include tablet {
+            grid-column: span 3;
+          }
 
           .animationBoba2 {
-            width: 5rem;
-            border: .1rem solid salmon;
+            width: 100%;
+            // border: .1rem solid salmon;
           }
         }
       }

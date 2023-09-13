@@ -21,6 +21,7 @@ Description: A passionate web developer based in Michigan, USA, with expertise i
       display: flex;
       align-items: center;
       justify-content: space-between;
+      // position: relative;
 
       .colLeft {
         display: flex;
@@ -51,6 +52,33 @@ Description: A passionate web developer based in Michigan, USA, with expertise i
           display: none;
         }
 
+        .close {
+          display: none;
+
+          @include tablet {
+            display: inline-block;
+            background-color: red;
+            // padding: .5rem;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 1rem;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            position: absolute;
+            right: 1rem;
+            top: 2rem;
+
+            .icon {
+              width: 2rem;
+              height: 2rem;
+            }
+          }
+
+        }
+
         nav {
           // border: .1rem solid salmon;
           padding: 2rem;
@@ -58,6 +86,10 @@ Description: A passionate web developer based in Michigan, USA, with expertise i
           background-color: #fff;
           box-shadow: $boxShadowPrimary;
           // box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+
+          @include tablet {
+            width: 100%;
+          }
 
           ul {
             display: flex;
@@ -109,7 +141,7 @@ Description: A passionate web developer based in Michigan, USA, with expertise i
         position: absolute;
         right: 0;
         top: 0rem;
-        padding: 5rem 3rem;
+        padding: 5rem 2rem;
         height: 100vh;
         min-width: 20rem;
         background-color: #fff;
@@ -143,7 +175,7 @@ Description: A passionate web developer based in Michigan, USA, with expertise i
                 // border: .01rem solid #099739;
                 cursor: pointer;
                 background-color: #fff;
-                box-shadow: $boxShadowPrimary;
+                // box-shadow: $boxShadowPrimary;
 
                 .icon {
                   width: 2rem;
@@ -162,6 +194,30 @@ Description: A passionate web developer based in Michigan, USA, with expertise i
         }
       }
 
+      .colRight.on {
+        display: block;
+        z-index: 9;
+        border: .1rem solid salmon;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        // width: 100%;
+
+        ul {
+          display: flex;
+          flex-direction: column;
+
+          li {
+
+            button {
+              background-color: #3580c7;
+              color: white;
+              width: 15rem;
+            }
+          }
+        }
+      }
+
       .btnMenu {
         display: none;
 
@@ -174,6 +230,7 @@ Description: A passionate web developer based in Michigan, USA, with expertise i
           border-radius: .5rem;
           box-shadow: $boxShadow;
           display: block;
+          cursor: pointer;
         }
 
         .iconMenu {
@@ -181,9 +238,7 @@ Description: A passionate web developer based in Michigan, USA, with expertise i
         }
       }
 
-      .colRight.on {
-        display: block;
-      }
+
     }
   }
 }
